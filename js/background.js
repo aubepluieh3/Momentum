@@ -4,9 +4,10 @@ const images = [
     "2.jpeg"
 ];
 
+const bgImage= document.querySelector("body");
 const chosenImage = images[Math.floor(Math.random() * images.length)];
 
-const bgImage = document.createElement("img");
-bgImage.src=`img/${chosenImage}`;
-
-document.body.appendChild(bgImage);//body에 html 추가
+//const bgImage = document.createElement("img");
+//bgImage.src=`img/${chosenImage}`;
+//document.body.appendChild(bgImage);//body에 html 추가
+bgImage.style.backgroundImage = `url('img/${chosenImage}')`;
