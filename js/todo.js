@@ -12,18 +12,20 @@ function saveToDos(){
 
 function deleteToDo(event){
     const li = event.target.parentElement;//삭제하고싶은 li
+    console.log("li.id");
     li.remove();
 }
 
 function paintToDo(newTodo){
     const li = document.createElement("li");
+    li.id=newTodo.id;
     const span = document.createElement("span");
+    span.innerText = newTodo.text;
     const button = document.createElement("button");
     button.innerText="❌";
     button.addEventListener("click", deleteToDo)
     li.appendChild(span); //li는 span이라는 자식을 가지게 됨
     li.appendChild(button);
-    span.innerText = newTodo;
     toDoList.appendChild(li);
 }
 
@@ -32,8 +34,12 @@ function handleToDoSubmit(event){
     event.preventDefault();
     const newTodo = toDoInput.value;
     toDoInput.value="";
-    toDos.push(newTodo);
-    paintToDo(newTodo);
+    const newTodoObj = {
+        text: newTodo,
+        id: Date.now(),
+    };
+    toDos.push(newTodoObj);
+    paintToDo(newTodoObj);
     saveToDos();
 }
 
