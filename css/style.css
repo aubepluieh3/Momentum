@@ -76,3 +76,12 @@ body {
 #todo-list {
   margin-bottom: var(--margin-fix);
 }
+#todo-list span {
+  margin-right: 10px;
+}
+
+#quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
