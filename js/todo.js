@@ -19,7 +19,11 @@ function deleteToDo(event) {
 
 function checkToDo(event) {
   const li = event.target.parentElement;
-  li.style.textDecoration = "line-through"; // 취소선 넣기
+  if (event.currentTarget.checked) {
+    li.style.textDecoration = "line-through"; //취소선 넣기
+  } else {
+    li.style.textDecoration = "none";
+  }
 }
 
 function paintToDo(newTodo) {
@@ -27,14 +31,14 @@ function paintToDo(newTodo) {
   li.id = newTodo.id;
   const span = document.createElement("span");
   span.innerText = newTodo.text;
-  const checkButton = document.createElement("button");
-  checkButton.innerText = "⭕";
-  checkButton.addEventListener("click", checkToDo);
+  const checkBox = document.createElement("input");
+  checkBox.type = "checkbox";
+  checkBox.addEventListener("change", checkToDo);
   const deleteButton = document.createElement("button");
   deleteButton.innerText = "❌";
   deleteButton.addEventListener("click", deleteToDo);
+  li.appendChild(checkBox);
   li.appendChild(span); //li는 span이라는 자식을 가지게 됨
-  li.appendChild(checkButton);
   li.appendChild(deleteButton);
   toDoList.appendChild(li);
 }

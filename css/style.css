@@ -79,7 +79,27 @@ body {
 
 #todo-list {
   margin-bottom: var(--margin-fix);
+  list-style: none;
 }
 #todo-list span {
   margin-right: 10px;
+}
+#todo-list button {
+  background-color: transparent;
+  border: none;
+  margin-right: 10px;
+}
+
+#todo-list li {
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+  margin-bottom: 3px;
+}
+
+#todo-list input {
+  margin-left: 10px;
 }
