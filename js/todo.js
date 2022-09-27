@@ -18,7 +18,7 @@ function deleteToDo(event) {
 }
 
 function checkToDo(event) {
-  const span = toDoList.querySelector("span");
+  const span = event.target.parentElement.children[1];
   if (event.currentTarget.checked) {
     span.style.textDecoration = "line-through"; //취소선 넣기
   } else {
