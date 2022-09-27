@@ -18,11 +18,11 @@ function deleteToDo(event) {
 }
 
 function checkToDo(event) {
-  const li = event.target.parentElement;
+  const span = toDoList.querySelector("span");
   if (event.currentTarget.checked) {
-    li.style.textDecoration = "line-through"; //취소선 넣기
+    span.style.textDecoration = "line-through"; //취소선 넣기
   } else {
-    li.style.textDecoration = "none";
+    span.style.textDecoration = "none";
   }
 }
 

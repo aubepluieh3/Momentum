@@ -72,6 +72,28 @@ body {
   font-style: italic;
 }
 
+#bookmark__box {
+  display: flex;
+  justify-content: center;
+}
+#bookmark {
+  margin-bottom: 5px;
+  background: linear-gradient(
+    to bottom,
+    rgb(220, 250, 108),
+    rgb(224, 200, 255)
+  );
+  height: 25px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+}
+#bookmark span {
+  cursor: pointer;
+}
+
 #todo-form input {
   width: 300px;
   margin-bottom: var(--margin-fix);
@@ -97,7 +119,7 @@ body {
   justify-content: space-between;
   align-items: center;
   border-radius: 15px;
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 
 #todo-list input {
